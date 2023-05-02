@@ -17,7 +17,7 @@ import jakarta.validation.Payload;
 @Constraint(validatedBy = checkCountValidator.class)
 @Documented
 public @interface checkCount {
-    String message() default "A quantide de assento está inválida, é esperado um número inteiro positivo múltiplo de 3";
+    String message() default "Quantidade inválida, deve ser um múltiplo de 3!";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

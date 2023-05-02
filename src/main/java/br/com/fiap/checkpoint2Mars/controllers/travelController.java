@@ -44,8 +44,7 @@ public class travelController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<Travels> createForm(@Valid @RequestBody Travels objViagem ){ 
-		//Aqui calculamos a data de retorno, e garantimos que ela seja salva no formato
-		//dd/MM/yyyy
+	
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");	
 		LocalDate dataPartida = LocalDate.parse(objViagem.getDataDecolagem(),fmt);
 	    LocalDate dataRetorno = dataPartida.plusDays(520 + Integer.parseInt((objViagem.getDiasEstadia())));
@@ -69,8 +68,7 @@ public class travelController {
 	
 	@PutMapping("/edit")
 	public ResponseEntity<Travels> updateForm(@Valid @RequestBody Travels objViagem ){
-		//Aqui calculamos a data de retorno, e garantimos que ela seja salva no formato
-		//dd/MM/yyyy
+	
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");	
 		LocalDate dataPartida = LocalDate.parse(objViagem.getDataDecolagem(),fmt);
 		LocalDate dataRetorno = dataPartida.plusDays(520 + Integer.parseInt((objViagem.getDiasEstadia())));
